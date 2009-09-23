@@ -1,0 +1,98 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=big5" />
+<title>$title</title>
+
+<style type="text/css">
+<!--
+body,html{ background-color: #141414; margin: 0px; padding: 0px; color: #999999;}
+#ctl { text-align: center;}
+a { color: #CCCCCC;}
+.bbs div { display: block; position: relative; white-space:pre; float:left;}
+.bbs span { position: relative; white-space:pre; letter-spacing: 0em; word-spacing: 0em;}
+.page { white-space: normal; float: none;}
+.bbs { font-family: "細明體"; font-size: 18pt; line-height: 1em; color: #CCCCCC; background-color: #000000; letter-spacing: 0px; word-spacing: 0px; vertical-align: top; text-align: left; padding: 3px; overflow: hidden; position: relative; width: 40em; display: none; margin-right: auto; margin-left: auto; margin-top: 20px;}
+.br { float: left; clear: right; position: relative;}
+.f { clear: left;}
+line { clear: left;}
+.l { display: block; position: relative; overflow: hidden; width: 0.5em; z-index: 2;}
+.r { display: block; position: relative; overflow: hidden; margin-left: -0.5em; width: 1em;}
+.w { margin-right: 0.5em;}
+.c0 { color: #000000;}
+.c1 { color: #000080;}
+.c2 { color: #008000;}
+.c3 { color: #008080;}
+.c4 { color: #800000;}
+.c5 { color: #800080;}
+.c6 { color: #808000;}
+.c7 { color: #C0C0C0;}
+.c8 { color: #808080;}
+.c9 { color: #0000FF;}
+.c10 { color: #00FF00;}
+.c11 { color: #00FFFF;}
+.c12 { color: #FF0000;}
+.c13 { color: #FF00FF;}
+.c14 { color: #FFFF00;}
+.c15 { color: #FFFFFF;}
+.b0 { background-color: #000000;}
+.b1 { background-color: #000080;}
+.b2 { background-color: #008000;}
+.b3 { background-color: #008080;}
+.b4 { background-color: #800000;}
+.b5 { background-color: #800080;}
+.b6 { background-color: #808000;}
+.b7 { background-color: #C0C0C0;}
+#black_box { font-family: Arial, Helvetica, sans-serif; color: #CCCCCC; background-color: #000000; position: absolute; width: 250px; top: 0px; right: 0px; height: 400px; overflow: scroll; font-size: 12px; z-index: 100; opacity:.75; filter: alpha( opacity=75 ); -moz-opacity: 0.75;}
+#black_box span{ color: #FF9900;}
+#ctl { margin-top: 5px; width: 720pt; margin-right: auto; margin-left: auto; position: relative;}
+#ctl a { display: block; position: relative; text-decoration: none; border: 1px solid #333333; font-size: 12px; padding-top: 4px; padding-right: 10px; padding-bottom: 3px; padding-left: 10px;}
+#ctl a:hover { color: #EBEBEB; background-color: #000000;}
+#ctl_play_pause,#ctl_stop { float: left; margin-left: 4px; margin-right: 5px;}
+#ctl #page_counter_display { position: relative; font-size: 13px; color: #CCCCCC; float: right; margin-right: 30px; padding-top: 2px; padding-bottom: 3px; letter-spacing: 3px; font-weight: bold; font-family: Arial, Helvetica, sans-serif;}
+#ctl #ctl_movie { position: relative; width: 200px; float: left; margin-left: 20px;}
+-->
+</style>
+<script language="JavaScript" type="text/javascript">
+var el=function($dom_id){ return document.getElementById($dom_id);}; function now()
+{ var d = new Date(); return (d.getFullYear()+ '/' + (d.getMonth()+1)+ '/' + d.getDate() + ' ' + d.getHours()+':' + d.getMinutes()+':' + d.getSeconds());}
+var $black_box = { box:null, init:function(){ this.box=el('black_box'); this.hide(); this.add("除錯訊息開始. 點兩下可隱藏 科科");}, add:function($msg){ this.box.innerHTML="<span>["+now()+"]</span><br /> "+$msg+"<br />"+this.box.innerHTML;}, show:function(){ this.box.style.display="";}, hide:function(){ this.box.style.display="none";}, show_hide:function(){ if ($black_box.box.style.display=="none")
+{ $black_box.show();}else{ $black_box.hide();}
+}
+}; var bbsmovie={ timeline:[], autoplay:false, index:0, page_counter_display:null, p:[], init:function(){ $pagecount=el('bbsmovie_info').getAttribute('pagecount'); $autoplay_ctl=el('bbsmovie_info').getAttribute('autoplay_ctl'); $forcetime=el('bbsmovie_info').getAttribute('forcetime'); for (var $i=0;$i<$pagecount;$i++)
+{ bbsmovie.p[$i]=el("p"+$i); if ($forcetime!='0' && $autoplay_ctl!='0')
+{ bbsmovie.p[$i].setAttribute("time",$forcetime)
+}
+}
+if ($autoplay_ctl=='0')
+{ el('ctl_movie').style.display="none";}
+bbsmovie.page_counter_display=el("page_counter_display"); bbsmovie.show(0);}, show:function($page){ if ($page<0)
+{ $page=0;}else if($page>=bbsmovie.p.length){ $page=bbsmovie.p.length-1;}
+bbsmovie.p[this.index].style.display="none"; bbsmovie.p[$page].style.display="block"; bbsmovie.index=$page; bbsmovie.page_counter_display.innerHTML='( '+(this.index+1)+"/"+this.p.length+' )';}, next:function(){ bbsmovie.show(this.index+1);}, prev:function(){ bbsmovie.show(this.index-1);}, auto_next:function(){ if (bbsmovie.autoplay==true)
+{ if (bbsmovie.index<this.p.length-1)
+{ bbsmovie.next(); $black_box.add('auto_next:'+this.p[this.index].getAttribute('time')); setTimeout('bbsmovie.auto_next()',this.p[this.index].getAttribute('time')*1000);}else{ bbsmovie.play_pause();}
+}
+}, play:function(){ bbsmovie.autoplay=true; $black_box.add('play:'+this.p[this.index].getAttribute('time')); setTimeout('bbsmovie.auto_next()',this.p[this.index].getAttribute('time')*1000);}, pause:function(){ bbsmovie.autoplay=false;}, play_pause:function(){ if (bbsmovie.autoplay==true){ el('ctl_play_pause').innerHTML="播放"; bbsmovie.pause();}else{ el('ctl_play_pause').innerHTML="暫停"; bbsmovie.play();}
+}, stop:function(){ bbsmovie.autoplay=false; el('ctl_play_pause').innerHTML="播放"; bbsmovie.show(0);}
+}; 
+</script>
+</head>
+<body>
+<div id="black_box" style="display:none"></div>
+
+<div id="ctl">
+	<a href="#" onclick="bbsmovie.prev();return false;" style="float:left">上一頁</a> 
+	<div id="ctl_movie">
+		<a href="#" id="ctl_play_pause" onclick="bbsmovie.play_pause();return false;">播放</a>  
+		<a href="#" id="ctl_stop" onclick="bbsmovie.stop();return false;">停止</a>	
+	</div>
+	<a href="#" onclick="bbsmovie.next();return false;" style="float:right">下一頁</a> 
+	<span id="page_counter_display">() </span>
+</div>
+<a href="#" onclick="$black_box.show_hide();return false;" style="display:none">blackbox</a>
+<script language="JavaScript" type="text/javascript">
+	$black_box.init();
+	bbsmovie.init();
+</script>
+</body>
+</html>
