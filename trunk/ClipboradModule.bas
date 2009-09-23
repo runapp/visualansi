@@ -20,24 +20,16 @@ Private Enum EPredefinedClipboardFormatConstants
      CF_WAVE = 12
      CF_UNICODETEXT = 13
      CF_ENHMETAFILE = 14
-''#if(WINVER >= 0x0400)
      CF_HDROP = 15
      CF_LOCALE = 16
      CF_MAX = 17
-'#endif /* WINVER >= 0x0400 */
      CF_OWNERDISPLAY = &H80
      CF_DSPTEXT = &H81
      CF_DSPBITMAP = &H82
      CF_DSPMETAFILEPICT = &H83
      CF_DSPENHMETAFILE = &H8E
-'/*
-' * "Private" formats don't get GlobalFree()'d
-' */
      CF_PRIVATEFIRST = &H200
      CF_PRIVATELAST = &H2FF
-'/*
-' * "GDIOBJ" formats do get DeleteObject()'d
-' */
      CF_GDIOBJFIRST = &H300
      CF_GDIOBJLAST = &H3FF
 End Enum
