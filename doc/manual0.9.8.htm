@@ -1,0 +1,883 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=big5">
+<title>Visual Ansi 使用手冊</title>
+
+<style type="text/css">
+<!--
+body {
+	background-color: #FFFFFB;
+}
+.tb1 {
+	padding: 0px;
+	text-align: left;
+	vertical-align: top;
+}
+.tb2 {
+	padding: 0px;
+	text-align: left;
+	vertical-align: top;
+	background-color: #EAEAEA;
+	border-right-style: solid;
+	border-bottom-style: solid;
+	border-top-width: 1px;
+	border-right-width: 1px;
+	border-bottom-width: 1px;
+	border-left-width: 1px;
+	border-top-color: #999999;
+	border-right-color: #999999;
+	border-bottom-color: #999999;
+	border-left-color: #999999;
+	text-indent: 0pt;
+	margin: 5px;
+	clip:    rect(auto auto auto auto);
+}
+.intbcontent {
+	margin: 5px;
+}
+
+.indextb {
+	font-family: "Arial", "Helvetica", "sans-serif";
+	font-size: 12px;
+	font-weight: bold;
+	color: #CCCCCC;
+}
+.indexsection {
+	font-size: 11px;
+	font-family: "Arial", "Helvetica", "sans-serif";
+	margin-left: 10px;
+	font-weight: normal;
+	color: #006AB0;
+}
+
+.indexchapter{
+	margin-top: 5px;
+	margin-right: 0px;
+	margin-bottom: 0px;
+	margin-left: 5px;
+	font-family: "Arial", "Helvetica", "sans-serif";
+	font-size: 12px;
+	font-weight: bold;
+	color: #000099;
+	border: 1px dotted #B9B9B9;
+	background-color: #FFFFFF;
+}
+
+a {
+	font-family: "Arial", "Helvetica", "sans-serif";
+	text-decoration:none;
+}
+.maintitle {
+	font-family: "Cataneo BT";
+	font-weight: bold;
+	font-size: 36px;
+}
+
+.ContentTB {
+	margin: 5px;
+}
+
+.contentTD {
+	border-top-width: 1px;
+	border-right-width: 1px;
+	border-bottom-width: 1px;
+	border-left-width: 1px;
+	border-bottom-style: dashed;
+	border-left-style: dashed;
+	border-top-color: #999999;
+	border-right-color: #999999;
+	border-bottom-color: #999999;
+	border-left-color: #999999;
+	font-size: 13px;
+	color: #333333;
+	font-family: "Verdana", "Arial", "Helvetica", "sans-serif";
+}
+
+.contentTitleTD {
+	background-color: #E8F7FF;
+	border-top-style: dashed;
+	border-bottom-style: dashed;
+	border-top-width: 1px;
+	border-right-width: 1px;
+	border-bottom-width: 1px;
+	border-left-width: 1px;
+	border-top-color: #999999;
+	border-right-color: #999999;
+	border-bottom-color: #999999;
+	border-left-color: #999999;
+	font-family: "Arial", "Helvetica", "sans-serif";
+	font-weight: bold;
+	color: #000099;
+	font-size: 16px;
+	text-indent: 10pt;
+	line-height: 30px;
+	letter-spacing: 5px;
+}
+.sectionContent {
+	font-family: "Georgia", "Times New Roman", "Times", "serif";
+	font-size: 12px;
+	text-indent: 15pt;
+	font-style: normal;
+	margin: 3px;
+	line-height: 20px;
+	color: #666666;
+}
+
+.pic {
+	border: 1px double #000000;
+}
+
+.innersection {
+	margin-left: 20px;
+	text-indent: 0pt;
+}
+
+.cctable {
+	text-align: center;
+	font-family: "Georgia", "Times New Roman", "Times", "serif";
+	font-size: 12px;
+}
+
+.backcolor {
+	background-color: #990000;
+	width: 4pc;
+}
+.style1 {
+	font-size: 14px;
+	color: #3366FF;
+}
+.style3 {color: #3300FF}
+.style4 {color: #FF9900}
+.delline {
+	text-decoration: line-through;
+}
+.style5 {color: #0000FF}
+.style6 {color: #666666}
+-->
+</style>
+</head>
+
+<body link="#006699" vlink="#008ACC" leftmargin="0" topmargin="0" >
+<table width="100%" border="0" align="left"  cellspacing="0"   class="tb1"  >
+  <tr align="left" valign="top"> 
+    <td height="86" colspan="2"> <div class="maintitle">Visual Ansi 使用手冊 <span class="style1">for 0.9.8</span></div></td>
+  </tr>
+  <tr align="left" valign="top"> 
+    <td width="18%" height="115"  class="indextb" > <div class="indexchapter" > 
+        1. 前言 
+        <div class="indexsection"> 1.1. <a href="#intro">簡介</a> <br>
+          1.2. <a href="#install">安裝</a><br>
+          1.3. <a href="#startup">啟動問題</a><br>
+        </div>
+        2. 介面 
+        <div class="indexsection"> 2.1. <a href="#uinormal">一般編輯器</a><br>
+          2.2. <a href="#uivac">方塊圖編輯器</a></div>
+        <br>
+        3.一般編輯器 - 操作 
+        <div class="indexsection"> 3.1. <a href="#opfile">檔案操作</a><br>
+          3.2.<a href="#opdrawtool"> 作畫工具</a><br>
+          3.3. <a href="#inandoutput">輸入與輸出</a><br>
+          3.4. <a href="#vaamode">動畫模式與多頁畫</a> <br>
+        </div>
+        4.方塊圖編輯器 - 操作 
+        <div class="indexsection"> 4.1. <a href="#vacfileo">檔案操作</a><br>
+          4.2. <a href="#vactools">作畫工具</a> <br>
+          4.3. <a href="#vacoutput">輸出</a> </div>
+        <br>
+        5.附錄 
+        <div class="indexsection">5.1.<a href="#ansieditor"> 字元表的編輯</a> <br>
+          5.2.<a href="#outputform"> 檢視/調整圖片視窗</a>(方塊圖編輯器)<br>
+          5.3. <a href="#pic2vacform2">檢視/調整圖片視窗(一般編輯器)</a><br>
+          <a href="#timelinesystem">5.4. 時間軸系統</a><br>
+          5.5. <a href="#ccknowlage">彩色碼基本知識</a><br>
+          5.6. <a href="#bbsmovieori">bbs動畫原理</a><br>
+          5.7. <a href="#fourcolorori">一格四色原理</a><br>
+          <a href="#new098">5.8. What's New in 0.9.8</a> </div>
+        <br>
+        6.關於<br>
+        <div class="indexsection"> <a href="#aboutva">Visual Ansi</a><br>
+          <a href="#aboutns">Nerv.Studio </a><br>
+
+</div>
+</div></td>
+    <td width="82%" > <table width="95%" border="0" class="ContentTB" >
+      <tr>
+        <td colspan="2" class="contentTitleTD">&nbsp;1.前言</td>
+      </tr>
+      <tr>
+        <td width="5%">&nbsp;</td>
+        <td width="95%" class="contentTD">1.1.簡介 <a name="intro"></a>
+            <div  align="center" ><img class="pic" src="pic/logo.png" ></div>
+            <div class="sectionContent"  > Visual Ansi 是一個專門為BBS美工所設計的軟體，有別於以往如PCMan或KKMan的編輯器模式，盡量將作畫的過程簡化為<strong> 拖 拉 點 選</strong> 的方式來進行，能讓作畫方式更加直覺，免去一些排版的麻煩，另外還有一個特色便是PageDown<strong>動畫模式</strong>，會自動幫你處理麻煩的行數問題，輕鬆的作出動畫。由於技術上的困難，目前並不支援底線(非標準)、閃爍(介面設計問題)在本版本中暫不支援，但是以後考慮加入，Visual Ansi自0.9.6版以後，除了原本的編輯器外，新增了一個<strong>方塊畫編輯程式</strong>，這個編輯器是利用一格四色的原理來畫出小方格的畫(類似軟體如BBS小畫家)，不過只有支援背景的八色，以上的這些缺點都可以用其他的編輯器(首推PCMan)來後製補完，Visual Ansi存在的目的並不是要完全取代其他的編輯器軟體，而是希望能讓過程方便，降低BBS美工門檻。</div>
+            <div class="sectionContent"  > 
+              <p>Visual Ansi是由Nerv. Studio所製作，為非營利軟體，歡迎任意拷貝複製，但是請勿未經同意修改程式，軟體中用到的某些圖示來源已不可考，如有侵犯到你的權益，請來信告知。另外，Nerv.Studio為非正式組織，成員只有一人 - 吱，所以這其實只是發表作品時壯大聲勢的稱號，如與其他組織名稱雷同則純屬巧合。</p>
+              <p><a href="http://creativecommons.org/licenses/by-nc-sa/2.0/tw/">本軟體採Creative Commons 姓名標示-非商業性-相同方式分享 授權條款</a> 授權</p>
+            </div>
+            1.2.安裝<a name="install"></a>
+            <div class="sectionContent"  > Visual Ansi的安裝程式可以從 <a href="http://98.to/%A7s" target="_blank">http://98.to/吱</a> 或 <a href="http://med.tmu.edu.tw/%7Emouse26/va" target="_blank">http://med.tmu.edu.tw/~mouse26/va</a> 免費下載取得 ，接下來執行安裝程式時按照步驟進行即可，反正就是一直按確定就對了啦。</div>
+            <br>
+      1.3.啟動問題<a name="startup"></a><br>
+      <div class="sectionContent"  > 有的人在啟動的時候可能會遇到一些無法執行的問題 ，大部分都是因為電腦缺少一些系統檔案所引起的結果，以下會列出一些錯誤訊息以及其解決之道<br>
+          <div class="innersection"> <strong>找不到重要的.DLL檔-MSVBVM60.DLL</strong><br>
+&nbsp;&nbsp; 會出現這個錯誤表示你的電腦裡沒有VB6 Runtime (Visual Basic 6.0 Runtime )，這個情形應該只會發生在Windows98以前的作業系統，之後的windows版本都有內建這個檔案，VB6 Runtime在許多地方都下載的到，如toget 微軟 還有其他各大下載站都有得下載，裝了這個檔案應該就沒問題了。</div>
+
+    </div> 
+      <br>
+      1.4.What's New (0.9.8) <br>
+      <div class="sectionContent" > 在0.9.8新版中增加了許多功能，主要為以下四類：
+        <ul>
+          <li> 新功能：鍵盤輸入功能、背景圖片、移動選取區塊(特殊效果工具)</li>
+          <li>	            雙色字支援</li>
+          <li>時間軸系統 for ptt pmore(動畫模式)</li>
+          <li>Windows剪貼簿支援</li>
+        </ul>
+			<p>當然除此之外還有對介面的改進以及一些bug修正，詳細內容請參考<a href="#new098">附錄5.8. What's New in 0.9.8</a>。</p>
+			<p>&nbsp;            </p>
+      </div></td>
+      </tr>
+    </table>
+      <br> 
+      <table width="95%" border="0" class="ContentTB">
+        <tr> 
+          <td colspan="2" class="contentTitleTD">&nbsp;2.介面</td>
+        </tr>
+        <tr> 
+          <td width="5%">&nbsp;</td>
+          <td width="95%" class="contentTD" >2.1.一般編輯器<a name="uinormal"></a><br> 
+            <div  align="center" ><img src="pic/VA_UI.png"   border="0" usemap="#Map" class="pic"></div>
+            <div class="sectionContent" > 整個介面可以劃分為六個部分<br>
+              <div class="innersection"> <font color="#828200">1.功能表</font><a name="uimenue" id="uimenue"></a><br>
+                &nbsp;&nbsp;算是整個程式的主控台在<strong>檔案(F)</strong>中可以做些開啟建立儲存檔案的動作，<strong>檢視(V)</strong>裡有讓你進行動畫試撥或是重新整理畫布的功能，<strong>編譯(V)</strong>是將你的畫作轉換為ANSI文字格式，才可以貼到BBS上或是移到其他的編輯軟體修改，<strong>工具(T)</strong>裡有幾個好用的功能，像是把含有彩色碼的文章貼到畫布中，還有召喚編輯字元表的編輯器讓你可以自由的更改字元表的內容，動畫導撥則提供了讓你處理多頁的能力，選項設定裡有一些設定可以讓你選擇建立適合你的作畫環境，<strong>關於(A)</strong>則是顯示版本資訊以及版權宣告，沒什麼特別功能。<br>
+                <font color="#828200">2.工具列</font> <a name="uitoolbar" id="uitoolbar"></a><br>
+                &nbsp;&nbsp; 在這裡選擇作畫的工具，前景背景的勾選是表示你要不要畫在前景或背景上，關於這些工具的詳細設定則是在<a href="#uitoolp">５</a>中來設定，其實這些工具中有的並不是很必要像是第一個畫筆其實可以用連續畫筆取代，但是當初設定如此現在做變動會有點麻煩，這樣其實也無傷大雅，所以就決定放著，可能以後不知道在哪個版本會心血來潮改掉吧。<br>
+                <font color="#999900">3.調色盤</font><a name="uicolorboard"></a><br>
+                　顧名思義調色盤就是讓你選顏色用的，只要將滑鼠移到你要的顏色上點一下，就可以將目前使用的顏色改變為你想要的，特別要注意的一點就是前景和背景的顏色是分開的，而且背景的顏色只有８色而已，前景和背景只要配合的好的話可以變化出很多種形狀，不一定要把畫中的物體的主體認定為前景，前面兩句只是作畫的技巧。<br>
+                <font color="#999900">4.畫布</font><a name="uipaper"></a><br>
+                &nbsp;&nbsp; 畫布就是讓你畫畫的地方(這不是廢話嗎....)，你點選完工具後就可以用滑鼠在畫布上執行動作，畫布的左上角有一個座標，那是用來表示目前滑鼠的位置。<br>
+                <font color="#999900">5.工具屬性欄</font><a name="uitoolp"></a><br>
+                &nbsp;&nbsp; 這裡的內容會因你在工具列所選的的工具而異，在這裡你可以調整工具的一些屬性，像是選畫筆的時候可以在此設定你的畫筆形狀或是要顯示的文字等等，有些工具的功能並不是只要在畫布上點選就可以了，還要從屬性欄中按下按鈕才會執行功能，像是複製貼上的工具就是這樣。<br>
+                <font color="#999900">6.畫布控版</font><a name="uipapercl"></a> <br>
+                &nbsp;&nbsp; 這個部分主要是在動畫模式或多頁畫的時候才會有用處 ，可以變換目前頁數 ，還有像是整頁複製等功能。</div>
+            </div>
+            2.2.方塊圖編輯器 <a name="uivac"></a> <br> <div class="sectionContent" > 
+              方塊圖編輯器跟一般編輯器沒有太大的不同也是可以分成六個部分 
+              <div  align="center" ><img src="pic/VAC_UI.png" border="0" usemap="#Map2" > 
+                <map name="Map2">
+                  <area shape="circle" coords="12,101,10" href="#vaccolorboard">
+                  <area shape="circle" coords="346,307,10" href="#vacpaperc">
+                  <area shape="circle" coords="228,81,10" href="#vacpaper">
+                  <area shape="circle" coords="178,51,10" href="#vactoolbar">
+                  <area shape="circle" coords="370,58,10" href="#vactoolp">
+                  <area shape="circle" coords="153,23,13" href="#vacmanue">
+                </map>
+              </div>
+              <div class="innersection"> <font color="#999900">1. 功能表</font><a name="vacmanue"></a><br>
+                &nbsp;&nbsp; <strong>檔案(F)</strong>處理檔案如建立開啟儲存檔案，<strong>編譯(C)</strong>可以把你的畫作翻譯成可以貼到BBS上的文章形式，<strong>關於(A)</strong>就是一些版權宣告以及版本資訊的東西，方塊圖編輯器似乎比一般編輯器少了一些功能，這是因為方塊圖編輯器是Visual 
+                Ansi發展後期才加入的計劃，所以在進度上會較慢一些，像是目前並無法將從別的地方複製下來的彩色貼到畫布上。<br>
+                <font color="#999900">2.工具列</font><a name="vactoolbar"></a><br>
+                &nbsp;&nbsp; 工具列可以讓你選擇作畫的工具，注意到跟一般編輯器不一樣的是沒有分前景背景的差別，如果了解一格四色原理的人大概就會了解他的原因，在此不贅述，在此較特殊的的功能就是<strong>圖片工具</strong>，可以讓你把一般的圖片轉換成方塊圖或是把圖片當作背景來協助畫畫。<br>
+                <font color="#999900">3.調色盤</font><a name="vaccolorboard"></a><br>
+                &nbsp;&nbsp; 在此只有八種顏色可以選擇，前景的亮色皆無法使用，因為一格四色的原理中上面的兩格是背景，所以只能選背景色，雖然說下面的長方形前景可以用亮色但是這樣會搞的很複雜，反而讓畫畫的時候不方便(上下連續的兩小格無法同時使用亮色)。<br>
+                <font color="#999900">4.畫布</font><a name="vacpaper"></a><br>
+                &nbsp;&nbsp; 畫布的高度必須限制為偶數，又是因為一格四色原理的限制。<br>
+                <font color="#999900">5.工具屬性欄</font><a name="vactoolp"></a><br>
+                &nbsp;&nbsp; 工具列所選取工具的內容。<br>
+                <font color="#999900">6.畫布控板</font><a name="vacpaperc"></a><br>
+                &nbsp;&nbsp; 控制多頁的一些功能。</div>
+            </div></td>
+        </tr>
+      </table>
+      <br> <table width="95%" border="0" class="ContentTB">
+        <tr> 
+          <td colspan="2" class="contentTitleTD">&nbsp;3.一般編輯器 - 操作</td>
+        </tr>
+        <tr> 
+          <td width="5%">&nbsp;</td>
+          <td width="95%" align="right" class="contentTD"><div align="left">3.1.檔案 <a name="opfile"></a> </div>            <div class="sectionContent" > 
+              <div align="left"><img src="pic/VA_newfile_form.png" align="right" vspace="3" hspace="3"  class="pic" >Visual 
+                Ansi 有自己的檔案格式，從功能表的<strong>檔案(F)-&gt;建立新檔</strong>可以建立出一個空白的檔案，按下開啟新檔後，會出現一個如右圖的視窗，在上方有三種檔案格式可以選擇，<strong>單頁畫</strong>格式表示你的畫作只有一面而已，這時無法輸入頁數，<strong>多頁畫</strong>表示你的畫作可能一個螢幕放不下，可能有人會覺得奇怪為何不做個捲軸就不用弄得這麼麻煩，其實是因為軟體當初設計的架構造成弄一個捲軸會麻煩很多，所以就只好這樣，<strong>多頁動畫</strong>就是動畫模式，跟多頁畫不一樣的地方是，動畫的每頁大小是固定的，而且在編譯的時候會自動多加入動畫重覆行，成為PageDown動畫，單頁畫和多頁畫都可以任意的選擇畫布的大小，在這裡要注意的是<font color="#FF9900">寬和高的單位大小不同</font>，因為像是一般的單位元字元(如a 
+                A K M 4...等)所佔的空間是長方形的，高是寬的兩倍，只有雙位元的字(如 中 文 字 ￥ ☆ ....)所佔的空間是正方形的，所以說如果你要建立一個一橫列可以擺下10個英文字母的正方形畫布，那你的大小就要設成10 
+                X 5。關於預設頁數的設定，這裡輸入的只是預設一開始的頁數，之後建立完了其實可以再修改。 </div>
+            </div>
+            <div class="sectionContent" > 
+              <div align="left">當你的畫畫到一半想先存起來下次再畫那就按功能表的<strong>檔案(F)-&gt;儲存檔案</strong>就可以把你的檔案存起來，存檔時副檔名會因你建立檔案時所選擇的檔案類型而異，單頁畫-vaf，多頁畫-vam，動畫-vaa，<strong>檔案(F)-&gt;另存新檔</strong>，可以讓你在儲存目前檔案的情況下將目前的畫作存成另外一個檔案。</div>
+            </div>
+            <div class="sectionContent" >
+              <div align="left"><strong>檔案(F)-&gt;開啟舊檔</strong>可以讓你把之前所儲存的檔案在叫出來。<br>
+              </div>
+            </div>
+            <div align="left">3.2.作畫工具 <a name="opdrawtool"></a> </div>
+            <div class="sectionContent" > 
+              <div align="left">Visual 
+                Ansi 提供了幾種作畫的工具讓你可以選擇 ，由左到右依序是<strong><a href="#va_pen">畫筆</a></strong> <strong><a href="#va_erease">橡皮擦</a></strong>              <strong><a href="#va_paint">上色</a></strong> <strong><a href="#va_obj">物件</a></strong> 
+                <strong><a href="#exchcolor">換色</a></strong> <strong><a href="#cpandpast">複製貼上</a></strong>(剪貼簿) <strong><a href="#input">輸入模式</a></strong> <strong><a href="#bkpic">背景圖片</a></strong>，下面就一個一個列出來介紹它們的功能<br>
+              </div>
+              <table class="tb1" cellpadding="0" cellspacing="0" >
+                <tr> 
+                  <td   class="sectionContent"> <div class="innersection"> <strong><img src="pic/va_pen_ico.png" width="16" height="16">畫筆 
+                      <img src="pic/va_tp_pen.png" align="left"  > </strong><a name="va_pen"></a><br>
+                      <li>連續：按著滑鼠不放可連續繪圖。</li>
+                      <li>取代：會把畫布上原本的刪除在畫上 。 </li>
+                      <li>自動文句：一次畫上多個字。                      </li>
+                      <li>自訂自元：自定一個字的筆刷。</li>
+                      <li>字元表：從列表中選取要的筆刷。<br>
+                        <br>
+                      畫筆工具可以讓你在畫布上用滑鼠畫畫，使用畫筆工具的方式，首先要在工具屬性欄(如左圖)，選擇你的前景，也就是你畫筆的樣子，前景來源有三種可以選擇，<font color="#FF9900">字元表</font>是把一些常用的特殊字元列出來，只要用滑鼠在你想要使用的字元上點一下，你的前景就會變成那個字元，字元表示可以編輯的只要按下&quot;編輯&quot;鈕就可以召喚出字元表編輯器(<a href="#ansieditor">附錄5.1</a>)，在字元表那裡有個2的數字那表示你目前所選的字元是雙位元字，在預設的字元表裡所有的字元都是雙位元，如果你想輸入一段文字的話可以選<font color="#FF9900">自訂文句</font>，選了自訂文句後再按下旁邊的內容鈕就會出現一個視窗讓你輸入文字，然後當你的滑鼠移到畫布上的時候選擇線會自動變成你所輸入的句子所會佔的空間，這時只要按下滑鼠左鍵，之前所輸入的字句就會被貼到畫布上了，<font color="#FF9900">自訂字元</font>則是可以讓你快速的輸入你想要的字，另外在<span class="style3">0.9.8</span>版之後原本的<span class="style4">連續畫筆</span>與<span class="style4">抹寫畫筆</span>被合併到一般畫筆中，只要勾選<span class="style4">連續</span>或<span class="style4">取代</span>即可改變畫筆的屬性。                    </li>
+                      </div></td>
+                </tr>
+                <tr> 
+                  <td  class="sectionContent"> <div class="innersection" > <strong><img src="pic/va_erease_ico.png" width="16" height="16">橡皮擦</strong><a name="va_erease"></a><br>
+                      <img src="pic/va_tp_erease.png" align="left"> 橡皮擦可以把畫布上的畫擦掉，所謂擦掉是只前景變成空白而背景變成黑色，工具列前景與背景的勾選對橡皮擦也同樣生效，也就是說如果只有勾選前景沒勾背景的話，那只有前景會被擦掉背景責備保留，工具屬性欄裡面有三種橡皮擦的使用方法，第一個是點選，就是你按下滑鼠鍵時經過的地方都會被擦掉，第二種是選取區塊，選了這種橡皮擦模式後，可以再畫布上選取一個長方形的區域，再按下&quot;清除&quot;鈕後就可以把所選取範圍刪除，第三種就是整頁清除，只要按下這個鈕就可以把本頁全部的內容都清除掉。</div></td>
+                </tr>
+                <tr> 
+                  <td class="sectionContent"> <div class="innersection" > <span class="delline"><strong><img src="pic/va_penf_ico.png" width="16" height="16">抹寫</strong><br>
+  抹寫的特性就等於是先把畫布上的東西刪除再畫上新的，它的工具屬性欄跟畫筆一樣。</span>(本功能於<span class="style3">0.9.8</span>版之後改成為一般<span class="style4">畫筆</span>的<span class="style4">取代</span>功能)</div></td>
+                </tr>
+                <tr> 
+                  <td class="sectionContent"> <div class="innersection" > <span class="delline"><strong><img src="pic/va_penc_ico.png" width="16" height="16">連續畫筆</strong><br>
+  連續畫筆跟畫筆不一樣的地方就是只要滑鼠鍵不放開，滑鼠移到哪裡就畫到哪裡，工具屬性欄也是跟畫筆一樣。</span>(本功能於<span class="style5">0.9.8</span>版之後改成為一般<span class="style4">畫筆</span>的<span class="style4">連續</span>功能)</div></td>
+                </tr>
+                <tr> 
+                  <td class="sectionContent"> <div class="innersection" > <strong><img src="pic/va_paint_ico.png" width="16" height="16">上色</strong><a name="va_paint"></a><br>
+                      <img src="pic/va_tp_paint.png" align="left"> 上色工具可以讓你在不改變前景形狀的狀態下將它刷上別的顏色，工具屬性欄中的點選就表示你的滑鼠畫到哪就變色到哪，選擇&quot;選取區塊&quot;模式的話就可以再畫步上選擇一個範圍然後按下實行，範圍內的顏色都會被變更成目前所選的顏色。</div></td>
+                </tr>
+                <tr> 
+                  <td class="sectionContent"> <div class="innersection" > <strong><img src="pic/va_obj_ico.png" width="16" height="16">物件</strong><a name="va_obj"></a><br>
+                      <img src="pic/va_tp_obj.png" align="left">物件可以讓你重覆的利用你所完成的圖案，在物件工具中有兩種模式可以選擇，一個是選取模式，另一個是貼上模式，當你選擇<img src="pic/va_point_ico.png" width="16" height="16"><font color="#FF9900">選取模式</font>的時候，你的滑鼠可以再畫步上選擇範圍也就是選擇想要當成物件的圖案，按下&quot;加入物件&gt;&gt;&quot;後就會把你選擇的圖案加到物件清單裡面，在此同時會把它存成一個單頁畫格式的檔案，除了用選取模式來加入物件到物件清單外，還可以從檔案來匯入物件，只要按下&quot;從檔案匯入&quot;鈕就可以選擇已經儲存好的單頁畫將它加入物件清單，選擇<font color="#FF9900"><img src="pic/va_m_ico.png" width="16" height="16">貼上模式</font>的時候，只要點選物件清單中的一個物件，再將滑鼠移到畫布上，就可以把物件重現於畫布上，左圖最下面有一個&quot;13X4&quot;代表的就是物件大小的&quot;寬X高&quot;，物件工具就有點像是進階版的複製貼上功能。</div></td>
+                </tr>
+                <tr> 
+                  <td class="sectionContent"> <div class="innersection" > <strong><img src="pic/va_exchcolor_ico.png" width="16" height="16">換色工具</strong><a name="exchcolor"></a><br>
+                      <img src="pic/va_tp_excolorpng.png"  align="left">換色工具可以讓你把畫布上某一種顏色換成另一種的顏色，使用的方法是先再工具屬性欄選擇想要變換的顏色，如左圖有四個顏色方塊代表著讓前景的<font color="#0000FF">黃色</font>變成<font color="#00FF00">鮮綠色</font>，然後讓背景的<font color="#330099">深藍色</font>變成<font color="#336600">深綠色</font>，如果按下<span class="style4">同背景</span>(<span class="style3">0.9.8</span>新功能)的按鈕就可以把前景的顏色設定成跟背景一樣(在背景的部份沒有同前景這個功能是因為前景有些背景沒有的顏色)，如果想要改變方塊的顏色的話，就先用滑鼠點選那個方塊，然後到調色盤選顏色就可以把那個方塊變成你想要的顏色，作用到畫布上的方法有兩種--點選與選取區塊，方法如前故不贅述。</div></td>
+                </tr>
+                <tr> 
+                  <td class="sectionContent"> <div class="innersection" > <strong><img src="pic/va_coppypast_ico.png" width="16" height="16">複製&amp;貼上</strong><a name="cpandpast"></a><br>
+                      <img src="pic/va_tp_cppst.png"  align="left"> 
+                      複製貼上可以讓你把畫布上的圖案暫存到剪貼簿，然後讓你從剪貼簿中貼到你想要的地方，做法是先從畫布上選擇你要複製或剪下的區塊後按下<span class="style4">複製</span>或<span class="style4">剪下</span>鈕，然後再按下貼上就會進入貼上模式，這時候只要把滑鼠移到畫布上就可以隨意的貼到你想要的地方，而<span class="style4">從剪貼簿擷取</span>(<span class="style3">0.9.8</span>新功能)的這個功能則是可以把從其他軟體(如pcman)複製下來的內容在這裡貼上，另外那個去背的選項則是選擇再貼上的時候要不要把黑色背景當作是透空的，也就是說假如你在這裡剪下或複製下來的東西，無法到kkman或pcman貼上，相對的從kkman或pcman複製下來的內容也無法從此貼到Visual 
+                      Ansi的畫布上，要與pcman或是kkman交流的時候只能藉由<strong>編譯</strong>與<strong>匯入文章/彩色碼</strong>來達成。</div></td>
+                </tr>
+                <tr> 
+                  <td class="sectionContent"> <div class="innersection" > <strong><img src="pic/va_input_ico.png" width="16" height="16">輸入模式</strong><a name="input" id="input"></a><br>
+                      <img src="pic/va_tp_pic.png" width="197" height="127"  align="left"> 
+                      輸入模式(<span class="style3">0.9.8</span>版新功能)讓VA使用者除了原本拖拉點選的作畫方式之外還能有如同一般編輯器以鍵盤輸入的功能，但是有個不同的地方就是VA的<span class="style4">輸入模式&quot;不具插入性質&quot;</span>，也就是說你在一個字的前面輸入內容的時候那個字不會向後退，在輸入模式之下，除了可以直接以鍵盤輸入內容之外，還可以點選字元表來輸入，另外滑鼠可以在畫布上選取範圍，只要從調色盤中點取顏色，範圍中的顏色就會改變。<br>
+                      <li><span class="style4">游標移動</span>：使你在輸入的時候，選擇範圍停駐在最後一次輸入的地方。</li>
+                      <li><span class="style4">偵測雙位元字</span>：使用方向鍵或滑鼠點取的時候，是否把雙位元字當作一個單位。</li>
+                      <li><span class="style4">覆蓋</span>：即取代功能，若新輸入字元的位置原本就有字了，此功能可把原本的刪除再畫上新輸入的內容。</li>
+                      <li><span class="style4">鍵盤擷取</span>：為模擬輸入的功能性輸入方塊，使用者不用去理會它，只是要輸入的時候，駐點都會在這裡，如果駐點不在此(比如說按了TAB鍵)，將會使輸入失效，這時候點一下畫布就可以恢復了。</li>
+                      <li>由於輸入模式是以模擬的方式讓使用者可以用鍵盤輸入，所以有些功能沒有支援，以下列出有支援的鍵盤輸入：<br>
+                        1. 一般字元輸入(a~z,0~9)與中文輸入法輸入<br>
+                      2. 控制游標位置：方向鍵、Home、 End </li>
+                      3. 功能鍵：Delete 、往左刪除鍵、Enter(換行)、PageUp與PageDown(僅適用於多頁或動畫)<br>
+                      4. 組合功能鍵：<span class="style4">Ctrl+V</span>(從剪貼簿貼上) 、<span class="style4">Ctrl+方向鍵</span>(移動選取區塊，請參考<a href="#va_eff">特殊效果工具</a>)<br>
+					  5. 選取功能鍵：改變選取範圍<span class="style4">Shift+方向鍵</span> (還有Home、End也有作用) <br>
+                      <br>
+                      </div></td>
+                </tr>
+                <tr> 
+                  <td class="sectionContent"> <div class="innersection" > <strong><img src="pic/va_pic_ico.png">背景圖片工具</strong><a name="bkpic" id="bkpic"></a><br>
+                      <img src="pic/va_tp_pic.png" width="197" height="127"  align="left"> 
+                      背景圖片工具(<span class="style3">0.9.8</span>版新功能)在一般編輯器的功能目前只有設定背景圖片，沒有轉圖的功能，操作上請參考<a href="#vacpictool"><span class="style4">方塊圖編輯器的圖片工具</span></a>。<br>
+                      <br>
+                      </div></td>
+                </tr>
+                <tr> 
+                  <td class="sectionContent"> <div class="innersection" > <strong><img src="pic/vac_eff_ico.png" width="16" height="16">特殊效果工具</strong><a name="va_eff" id="va_eff"></a><br>
+                      <img src="pic/va_tp_eff.png" width="195" height="94"  align="left"> 
+                      特殊效果工具(<span class="style3">0.9.8</span>版新功能)目前裡面只有一種工具，可以移<span class="style4">動選取區塊</span>，也就是說你可以把選取的區塊的內容整個移動，<span class="style4">邊界限制</span>的選項如果勾選的話，移動到邊緣的時候就會停止，不會超出邊緣，另外此功能在<a href="#input">輸入模式</a>中也可以使用(Ctrl+方向鍵，只限於輸入模式下)。<br>
+                      <br>
+                      </div></td>
+                </tr>
+              </table>
+              <br>
+            </div>
+            <div align="left">3.3.輸入與輸出<a name="inandoutput"></a> </div>
+            <table class="tb1" cellpadding="0" cellspacing="0" >
+              <tr> 
+                <td background="#outputform" > <div class="sectionContent" > <img src="pic/VA_compile_form.png" align="right">如果要把Visual 
+                    Ansi中完成的作品貼到BBS上的畫該怎麼做呢?因為Visual Ansi檔案的格式跟一般的不同，所以要貼到BBS上的時候必須要經過轉換格式的手續，也就是VA所謂的<strong>編譯</strong>功能，當你從功能表按下&quot;編譯&quot;的時候會出現一個視窗(如右圖)，選項欄中有幾個可以調整編譯的選項，<span class="delline">如果勾選"<font color="#FF9933">不含彩色碼</font>"的話，編出來的結果就會只有單純的一般字元</span>(此功能因多餘於<span class="style3">0.9.8</span>刪除)，而不會有彩色碼，<span class="delline">&quot;<font color="#FF9900">彩色碼減肥</font>&quot;的這個選項則是讓編出來的彩色碼較精簡</span>(此功能於<span class="style3">0.9.8</span>版後為內建預設)，<span class="delline">如果彩色碼再同一行太長的話，貼到bbs上的時候就可能會出現斷行而使圖案亂掉的情形，但是精簡的彩色碼如果要用人工來修改的話會比較難看懂，平常的時候這個選項預設就是已勾選的狀態，如果你想要得到比較好懂的彩色碼的話可以將它取消勾選</span>，有三個範圍可以選擇，一般而言是選全部，如果你只想將畫布中某個區域編出來的話，就先任意使用一個可以在畫布上選擇範圍的工具(如複製&amp;貼上...)選擇後再從編譯的範圍選項中選"<span class="style4">選取範圍</span>"，<span class="style4">動畫重複行</span>只有在動畫模式下才會出現，可以設定動畫每頁之間的分隔線，<span class="style4">加入時間軸</span>也是只有在動畫模式下編譯才會出現，可以讓可播放pmore動畫的bbs站(如ptt ptt2)依你設定的時間軸播放動畫;在輸出欄裡有兩個勾選的選項，一般而言"<font color="#FF9933">複製到剪貼簿</font>"是最基本的輸出方式，<span class="delline">一般而言"<font color="#FF9933">文字方塊視窗</font>"(附錄5.2)是最基本的輸出方式</span>(此功能因雙色字會有亂碼於<span class="style3">0.9.8</span>版後刪除)，另外還可以存成文字檔用別的軟體開啟(如PCMan-&gt;ANSI編輯-&gt;開啟舊檔)。</div></td>
+              </tr>
+              <tr> 
+                <td > <div class="sectionContent"> 如果是從pcman或是kkman上複製下來的彩色碼要怎麼貼到VA的畫布上呢，<span class="delline">VA沒有設計直接像複製貼上一樣的功能</span>(於<span class="style3">0.9.8</span>版之後可以從<a href="#cpandpast"><span class="style4">複製&amp;貼上</span></a>-&gt;<span class="style4">從剪貼簿擷取</span>的功能把剪貼簿裡的內容貼上)，可以從<strong>工具(T)-&gt;匯入文章/彩色碼</strong>來進行貼上，其中X 
+                    Y是用來設定文章左上角的起始座標，貼上有兩種，一般貼上的話不會進行彩色碼的分析，所以說如果你要貼上的內容含有彩色碼的話就要用<font color="#FF9933">彩色貼上</font>才行。<img src="pic/VA_input_form.png" width="589" height="387"><br>
+                </div></td>
+              </tr>
+            </table>
+            <div align="left">3.4.動畫模式與多頁畫 <a name="vaamode"></a> <br> 
+            </div>
+            <table width="100%" border="0" cellspacing="0">
+              <tr> 
+                <td> <div class="sectionContent" > BBS的PageDown動畫製作頗麻煩，所以Visual 
+                    Ansi 也特別設計了動畫模式的環境來輔助bbs動畫的製作，當你在建立新檔的時候選擇檔案類型為"<strong>多頁動畫</strong>"的時候就進入了<strong>動畫模式</strong>，在動畫模式中會比一般模式多了一些功能可以使用，在畫布控板當中多了對頁數控制的功能，可以按上一頁 
+                    下一頁來改變目前頁數，還可以利用<font color="#FF9933">快速跳頁</font>功能，使要先選擇好頁數再按下右邊的&quot;GO&quot;鈕，就會跳到你選擇的那一頁了，除了控制頁數的功能外這裡還有一些輔助動畫設計的功能，像是<font color="#FF9933">整頁複製</font>只要在後面的來源中填入來源的頁數再按下"整頁複製"鈕，就可以將來源整頁的內容原封不動的複製到目前這頁，而"<font color="#FF9933">幻影</font>"的則是可以將某一頁的影像顯示到目前的畫布上，但只是幻影而已並沒有真的畫上去，只要按下"重新整理"鈕就可以看到本頁真正的內容 
+                    ，幻影可以協助作動畫相對位置的判斷，<font color="#FF9933">撥放</font>鈕則可以自動翻頁的顯示動畫，<span class="delline">目前尚未設計撥放速度的調整以後會加入</span>，於<span class="style3">0.9.8</span>版之後加入了<a href="#timeline"><span class="style4">時間軸</span></a>的功能，可以設定每個畫面的<span class="style4">停留時間</span>(單位是秒、最小可以是0.001秒)，若先多選在設定的話，就可以把選取那幾頁的都變成你設定的秒數。</div>
+                  <div class="sectionContent" > <img src="pic/va_animidirector_form.png"  align="right">在動畫模式下，功能表的<strong>工具(T)->動畫導撥</strong>功能便可以啟動 
+                    ，動畫導撥可以協助你進行頁的處理，在單選操作中你可以對在左邊清單中所選擇的頁進行刪除 上移 下移 插入空白頁的動作，在多選操作中你必須在清單中選取兩個以上的頁，要選取多個頁的方法就是再選取的時候按著Shift或是Ctrl鍵不放來選取，按下Shift可以進行連續選取，Ctrl則是讓你可以加入個別的選取項目，在這裡&quot;重新整理&quot;的功能是讓清單中的頁數名稱在按現在的順序命名，當你勾選了預覽之後，畫布的畫面會跳到你在清單中選取的頁。<br>
+                  </div>
+                  <div class="sectionContent" >動畫模式下按下編譯的時候，在編譯選項的視窗中會有一個動畫重覆行可以輸入東西，在bbs中按pagedown會有一行是跟上一頁重覆的，這就是所謂的動畫重覆行，這裡預設的動畫重覆行是"- 
+                    - -"，你可以將他改成任何的一行，也可以把含有彩色碼的文字填入。</div></td>
+              </tr>
+          </table></td>
+        </tr>
+      </table>
+      <table width="95%" border="0">
+        <tr> 
+          <td colspan="2" class="contentTitleTD">&nbsp;4.方塊圖編輯器 - 操作</td>
+        </tr>
+        <tr> 
+          <td width="5%">&nbsp;</td>
+          <td width="95%"  class="contentTD">&nbsp; 4.1.檔案操作<a name="vacfileo"></a><br> 
+            <div class="sectionContent" > <img src="pic/vac_new_form.png" align="right"> 
+              方塊圖編輯器獨立於一般編輯器，在原理以及資料格式上有所不同，所以檔案的格式也無法與一般編輯器相通，在<strong>檔案(F)->建立新檔</strong>中可以看到方塊圖編輯器的檔案類型分成兩種 
+              "一般"與"動畫"，以一般編輯器的形式來說明，"一般"包含了單頁畫與多頁畫，"動畫"則是跟多頁動畫差不多，不管是哪一種類型只要是方塊圖編輯器檔案的副檔名都是*.vac，在此要特別注意的是因為一格四色的原理所需所以畫布高必須要是偶數，而且跟一般編輯器不一樣的地方是，這裡寬跟高的單位大小是一樣的，雖然說 
+              <br>
+              一行的大小最大可以到80，可是經過測試的結果，到80的結尾常因為過長而導致斷行，所以如果放棄1格成79的話就可以避免這個問題的發生。</div></td>
+        </tr>
+        <tr> 
+          <td></td>
+          <td class="contentTD"> 4.2.作畫工具<a name="vactools"></a><br> <div class="sectionContent" > 
+              方塊圖編輯器裡提供了幾種作畫的工具可以選擇 : <strong>畫筆 橡皮擦 換色 效果 複製&amp;貼上 圖片</strong> 
+              <table class="tb1" cellpadding="0" cellspacing="0"  width="100%">
+                <tr> 
+                  <td   class="sectionContent"> <div class="innersection"> <strong><img src="pic/va_pen_ico.png" width="16" height="16">畫筆</strong><br>
+                      在方塊圖編輯器裡的畫筆並沒有選項可以讓你設定，就像是小畫家裡的畫筆一樣，是連續的而且具覆蓋性。 </div></td>
+                </tr>
+                <tr> 
+                  <td   class="sectionContent"> <div class="innersection"> <strong><img src="pic/va_erease_ico.png" width="16" height="16">橡皮擦</strong><br>
+                      <img src="pic/vac_tp_erease.png"  align="left">橡皮擦可以直接在畫布上先選取區塊後再用區塊清除就可以把所選擇的地方刪掉，或是按下&quot;清除整頁&quot;把整頁的內容都刪除。<br>
+                    </div></td>
+                </tr>
+                <tr> 
+                  <td   class="sectionContent"> <div class="innersection"> <strong><img src="pic/va_exchcolor_ico.png" width="16" height="16">換色</strong><br>
+                      <img src="pic/vac_tp_excolor.png" align="left"> 換色工具可以把畫布上的某一種顏色換成另一種顏色 
+                      ，使用的方法就是先選擇要變換的顏色，只要在顏色的方塊上點一下，再從調色盤選取顏色，就可以設定要變換的顏色了，當操作的模式設成<font color="#FF9933">點選</font>的時候只要直接在畫布上面畫就可以進行動作，如果是<font color="#FF9933">選取區塊</font>的話就要先在畫布上選一個區域後再按下&quot;實行&quot;就可把你選的地方進行換色的動作。</div></td>
+                </tr>
+                <tr> 
+                  <td   class="sectionContent"> <div class="innersection"> <img src="pic/vac_eff_ico.png" width="16" height="16"><strong>效果</strong><br>
+                      <img src="pic/vac_tp_eff.png"  align="left"> 效果可以讓你對畫布上的某個區域進行一些轉換，操作的方式是先用滑鼠再畫布上選取一個區塊，再按下效果的鈕，<font color="#FF9933">水平翻轉</font>就是左右相反，<font color="#FF9933">垂直翻轉</font>是上下巔倒，<font color="#FF9933">反色</font>則是讓區塊內的顏色變成與原本的相反(如黑-&gt;白)，<font color="#FF9933">右旋</font>則是讓圖形向右轉90度，如果右旋三次就如同左旋一次的效果。<br>
+                    </div></td>
+                </tr>
+                <tr> 
+                  <td   class="sectionContent"> <div class="innersection"> <img src="pic/va_coppypast_ico.png" width="16" height="16"><strong>複製&amp;貼上</strong><br>
+                      <img src="pic/vac_tp_coppypast.png"  align="left"> 複製貼上可以讓你把畫布中的一個區塊進行<font color="#FF9933">複製 
+                      剪下</font>的動作，然後再使用<font color="#FF9933">貼上</font>就可以把複製或剪下的東西貼到你想要的地方，操作的方法事先用滑鼠在畫布上選擇一個範圍，然後按下複製或剪下鈕就可以把所選區域的內容加到剪貼簿中，然後按下貼上後就可以進入貼上模式，這個時候滑鼠移到畫布上就可以看到一個方框，那就是剪貼簿中圖案的大小，只要在畫布上點一下就可以把剪貼簿中的內容貼到畫布上了，下面的<font color="#FF9933">去背</font>選項如果勾選的話就會把剪貼簿中的黑色部分當作是空的。<br>
+                    </div></td>
+                </tr>
+                <tr> 
+                  <td height="515"   class="sectionContent"> <div class="innersection"> 
+                      <img src="pic/vac_pic2vac_ico.png" width="16" height="16"><strong>圖片工具</strong><a name="vacpictool"></a><br>
+                      <img src="pic/vac_tp_pic2vac.png"  align="left"> 圖片工具的作用主要有兩個，一個是把圖片當作背景輔助作畫，另一個重要的功能則是能將圖片轉換成方塊圖，在操作上首先要將想要使用的圖片載入到程式當中，按下<font color="#FF9933">載入圖片</font>之後就可以選擇圖檔，支援的圖片格式有JPEG 
+                      GIF BMP等，載入圖片後會有一個<font color="#FF9933">檢視/調整圖片視窗</font>出現，裡面會有一個跟畫布大小一樣的區域，裡面會有你所載入的圖片，檢視/調整圖片視窗裡還有一些工具可以幫助你進行對圖片的調整，可以讓你改變圖片大小 
+                      位置等，以利能輔助作畫以及讓轉換成方塊圖的時候達到最佳效果，載入圖片後只要在工具屬性欄按下<font color="#FF9933">設為背景</font>就可以把圖片設成畫布的背景了，如果要取消再按<font color="#FF9933">取消背景</font>即可，<font color="#FF9933">轉換圖片到畫布</font>的功能就是讓你把你所載入的圖片變成ANSI方塊圖，當你按下這個功能的時候會出現一個轉換視窗，如右下圖<img src="pic/vac_pic2vac_form2.png"  align="right">這裡有一些設定讓你調整在轉換時的方式，因為並不是所有的圖片用同一種參數轉換出來的效果都是最好的，所以在此提供了一些調整的空間，首先再轉換的模式有兩種，第一種是Visual 
+                      Ansi自己的轉換方式，另一種則是利用Windows本身的轉換能力，大部分的情況下都是前者的效果比較好，不過也可試試後者說不定剛好會符合你的需要，在VA自己的轉換法中有<font color="#FF9933">最暗</font>與<font color="#FF9933">最亮</font>兩條槓可以調整，使用上通常會先用預設的參數轉換看看，如果不滿意再做調整，如果想把參數調回預設值的話只要按一下<font color="#FF9933">預設值</font>的鈕就可以了，最亮與最暗數值的意義所代表的是視為亮與暗的界線，假如說你所轉出的圖片中有太多的白點，就表示對這張圖而言最亮的門檻過低，那就必須將最亮的數值(門檻)調高，那再轉換的時候就不會輕易地把一個顏色判定為最亮，同樣最暗的原理也類似，如果圖片中過多黑色的部分，許多應該被認為有其他顏色的部分變成了黑色，那就表示只要有一些些暗的顏色就被當作是黑色，這時候只要把最暗調低就可以了，在這裡要注意的是，如果最亮與最暗之間的範圍太大的話，可能會讓有顏色的地方失去對比糊成一團，範圍太小的會可能會使圖形被黑色與白色弄得破碎，這種東西用講的有點抽象，如果看不懂的話沒關係，親自試試看即可心領神悟，那個鎖定範圍大小的選項就是讓你可以固定最亮與最暗之間的距離，只要調動最亮或是最暗另外一個都會跟著移動，有的圖片整張都有點亮的時候就轉出來就會一堆都是白色，這個時候只要用鎖定範圍再把整個最暗與最亮調高到適當位置即可，反正說了這麼多只要在做的時候試試看調調看就對了^^。<br>
+                      P.S<a href="#pic2vacform2"><font color="#FF9933">檢視/調整圖片視窗</font> 
+                      詳細使用方式請參照 附錄5.2</a><br>
+                    </div></td>
+                </tr>
+              </table>
+              <br>
+          </div>
+            4.3.輸出<a name="vacoutput"></a><br> 
+            <div class="sectionContent" > <img src="pic/vac_compile_form.png" align="right">當你的作品完成了之後要貼到bbs上的時候，首先要轉換成ANSI格式，這時候只要按下功能表的<strong>編譯(C)</strong>就可以達成，有三個範圍可以選擇，全部的話可以得到最一般的結果，動畫模式下會得到PageDown動畫，本頁的話就只會將你目現在畫布中看到的轉換而已，選取範圍則是要你用任何一種可以在畫布上選範圍的工具選取後在使用，這裡特別要注意的是編出來的內容大小高必定是偶數格數，如果你選取的範圍高度不是偶數程式會自動幫你修正，在下面有一個<font color="#FF9933">避免游標引起的色彩喪失</font>選項，勾選個選項後，在每行的最前面都會放置一個還原碼，也就是讓他不要跨行繼承色彩，在游標經過的時候才不會變色(我不清楚原因 
+              但就是有這個現象)，這個選項的預設是勾選，所產生的彩色碼可能會多一點點，<font color="#FF9933">保護行尾空白色彩</font>的功用在於防止bbs自動刪除多餘空白的功能影響到內容的完整性，有些的bbs會在你儲存文章的時候把每一行空白鍵的結尾視為無意義字元而將他們刪掉以節省空間，但是對我們而言有些空白是來當作背景色的，可是bbs本身無法分辨這點，所以當你的內容要po到bbs上時最好勾選這個選項。</div></td>
+        </tr>
+      </table>
+      <table width="95%" border="0">
+        <tr> 
+          <td colspan="2" class="contentTitleTD">&nbsp;5.附錄 </td>
+        </tr>
+        <tr> 
+          <td width="5%">&nbsp;</td>
+          <td width="95%" > <table class="tb1" cellpadding="0" cellspacing="0"  width="100%">
+              <tr> 
+                <td class="ContentTD"> 5.1.字元表編輯器<a name="ansieditor"></a><br> 
+                  <div class="sectionContent" >在一般編輯器中當你按下在功能表的<strong>工具(T)-&gt;字元表編輯器</strong>或是在畫筆的工具屬性欄按下<font color="#FF9933">編輯</font>後就會召喚出字元表編輯器，字元表裡的內容是儲存在Visual 
+                    Ansi安裝目錄下的<font color="#FF9933">ansi.txt</font>檔案中，你<img src="pic/VA_ansilisteditor_form.png"  align="left" >也可以直接用記事本把他打開來修改，不過VA也提供了這麼一個編輯器來讓你修該字元表的內容，編輯器主要能做的動作有 
+                    <font color="#FF9933">移動</font> <font color="#FF9933">取代</font><span class="style6">或</span><font color="#FF9933">新增</font> 
+                    <font color="#FF9933">刪除</font> ，使用的方法事先在表中選取想要作用的字元，然後再用右邊的動作鈕來執行動作，這裡比較需要說明的就是取代的用法，必須要先在取代右邊的欄位中輸入要改成的字元後這個按鈕可以按，如果是想要新增的話，那就移到表的最下面找一個空白的地方取代就行了，當你把字元表弄成你想要的樣子之後別忘記按下<font color="#FF9933">儲存套用</font>喔，才能把修改過的字元表套用到VA。</div>
+                <td> </tr>
+
+ <tr> 
+                <td class="ContentTD"> <br>
+                  <span class="delline">5.2.輸出文字方塊視窗</span>(此功能已於<span class="style3">0.9.8</span>版移除)<span class="delline"><br> 
+                  <img src="pic/VA_output_form.png" > 
+                  </span>
+                  <div class="sectionContent" ><span class="delline">不管是在一般編輯器或是方塊圖編輯器編譯之後，輸出的ANSI文字都會由這個視窗呈現，如果要貼到bbs或是其他編輯器的時候可以直接按<font color="#FF9933">複製下來</font>就可以把輸出的ANSI複製到剪貼簿裡，接下來只要用BBS軟體的彩色貼上就可以了，旁邊<font color="#FF9933">存成檔案</font>的功能則是讓你可以把輸出的內容存成*.ANS檔，這種檔案可以用PCMAN或是KKman的編輯器來開啟，另外旁邊有一個<font color="#FF9933">尋找可能錯誤</font>的功能，可以幫你偵測是否有哪一行的長度過長，過長的話貼到BBS上會亂掉，不過目前這個功能只能當作參考用有時候會不太準，因為我不太了解實際亂掉的原理，目前是以總長度來判定，如果有人知道的話可以好心的告訴我，在操作上就是按下&quot;檢查錯誤&quot;就可以了，然後右邊的選單可以選擇錯誤就會跳到錯誤的那一欄，這裡要特別注意的是如果內容有所變動那就必須再重新檢查錯誤</span>。</div>
+                <td> </tr>
+              <tr> 
+                <td class="ContentTD"> <br>
+                  5.2.檢視/調整圖片視窗(方塊圖編輯器)<a name="pic2vacform2"></a><br> <img src="pic/vac_pic2vac_form3.png" width="353" height="385" align="left"> 
+                  <div class="sectionContent" >當你在方塊圖編輯器的圖片工具載入圖片後，或是按下檢視/調整圖片的時候就會出現這個檢視/調整圖片視窗，因為我們載入的圖片不一定他的位置以及大小就是適合我們想要的，所以在此可以讓我們做調整，調整的方式可以從工具箱提供的功能來進行，也可以從下面的手動修改來修改，首先從工具箱的內容介紹起，<font color="#FF9933">還原圖片</font>的功能就像是他字面上所說的一樣，可以把圖片還原到最初載入圖片時的樣子，當你調整失敗的時候就可以把他還原重做，<font color="#FF9933">等比例最大</font>的功能則是可以在不超過畫布大小的情況下將圖片放大大最大，<font color="#FF9933">最大方格</font>的意思就是可以把原本圖檔的最小單位(像素)放大到跟方塊圖的一個方塊大小相同，在這個情況下所轉換出來的方塊圖會最接近原本的圖案，<font color="#FF9933">剪裁</font>這個功能可以只留下你想要的部分，操作的方法是先用滑鼠在圖片選擇你所想要的區域後按下剪裁就可以了，<font color="#FF9933">設定左上角</font>中的左上角指的是圖片畫布的左上角，這個功能主要是在移動圖片到你想要的地方，操作的方法事先按下"設定左上角"鈕後，在用滑鼠在圖片畫布上選擇你要的位置，完成動作後按 
+                    "結束設定"即可，<font color="#FF9933">設定位置</font>的功能也是讓你可以移動圖片的位置，不過滑鼠點選的地方是圖片的左上角而不是畫布的，操作方法跟設定左上角類似，<font color="#FF9933">變形</font>是一個可以讓你任意改變圖片大小位置的功能，操作的方法是先再畫布上選擇一個區塊，這個區塊就是你的圖片要變成的大小及位置，再來按下變形即可，接下來要說明的是手動修改的部分，位置指的是圖片在畫布的座標左上角設為(0,0)，往右為正X，往下為正Y，寬與高的部分需要特別說明的大概就是寬與高可以是負數，如果你在寬或高前加一個負號的話，圖形就會巔倒，完成了數值的修改後按下<font color="#FF9933">套用</font>就可以了，<font color="#FF9933">取消</font>的功能是讓你按下套用鍵以前把數值還原為目前圖片的值。</div>
+                <td> </tr>
+              <tr> 
+              <tr> 
+                <td class="ContentTD"> <br>
+                  5.3.檢視/調整圖片視窗(一般編輯器)<a name="pic2vacform2"></a><br> <img src="pic/va_pic_form2.png" align="left"> 
+                  <div class="sectionContent" >當你在一般編輯器的圖片工具載入圖片後，或是按下檢視/調整圖片的時候就會出現這個檢視/調整圖片視窗，這個介面跟方塊圖編輯器的圖片工具非常的類似，但是他的功能只有設定背景圖片而不能轉換圖片成BBS的圖。</div>
+                <td> </tr>
+              <tr> 
+                <td class="ContentTD"> <br>
+                  5.4.時間軸系統(一般編輯器only)<a name="timeline" id="timeline"></a><br>  
+                  <div class="sectionContent" >當在製作動畫的時後，可以使用時間軸系統來設定播放動畫的時候再每一頁所停留的時間，單位是秒，數值必須大於0.001(千分之ㄧ秒)，特別注意的是時間軸的功用僅在VA的播放動畫或是編譯成pmore動畫的時候適用，如果你放上作品的BBS站不支援pmore格式的動畫，那將不會有任何作用。在介面上有兩個地方可以設定時間，一個是<span class="style4">畫布控板</span>-可以設定當頁的時間，另一個則是<a href="#vaamode">工具-&gt;動畫導播</a>-可以設定任一頁的時間以及同時設定許多頁的時間。<br>
+                    (此功能特別感謝aokman網友的建議)
+                  </div>
+                <td> </tr>
+
+              <tr> 
+
+                <td class="ContentTD"> 5.5.彩色碼基本知識 <a name="ccknowlage"></a><br> 
+                  <div class="sectionContent" > 彩色碼分為前景和背景兩個部分，前景有16種顏色，而背景只有8種顏色，整理如下表:<br>
+                    <table width="73%" border="1" align="center" class="cctable">
+                      <tr> 
+                        <td colspan="3">前景</td>
+                        <td colspan="3">背景</td>
+                      </tr>
+                      <tr> 
+                        <td width="10%" bgcolor="#000000"><font color="#000000">█</font></td>
+                        <td width="20%">30</td>
+                        <td width="30%">黑色</td>
+                        <td width="10%" bgcolor="#000000"><font color="#000000">█</font></td>
+                        <td width="20%">40</td>
+                        <td width="30%">黑色</td>
+                      </tr>
+                      <tr> 
+                        <td bgcolor="#990000"><font color="#990000">█</font></td>
+                        <td>31</td>
+                        <td>棕色</td>
+                        <td bgcolor="#990000"><font color="#990000">█</font></td>
+                        <td>41</td>
+                        <td>棕色</td>
+                      </tr>
+                      <tr> 
+                        <td bgcolor="#006633"><font color="#006633">█</font></td>
+                        <td>32</td>
+                        <td>末綠色</td>
+                        <td bgcolor="#006633"><font color="#006633">█</font></td>
+                        <td>42</td>
+                        <td>末綠色</td>
+                      </tr>
+                      <tr> 
+                        <td bgcolor="#999900"><font color="#999900">█</font></td>
+                        <td>33</td>
+                        <td>土黃色</td>
+                        <td bgcolor="#999900"><font color="#999900">█</font></td>
+                        <td>43</td>
+                        <td>土黃色</td>
+                      </tr>
+                      <tr> 
+                        <td bgcolor="#003399"><font color="#003399">█</font></td>
+                        <td>34</td>
+                        <td>深藍色</td>
+                        <td bgcolor="#003399"><font color="#003399">█</font></td>
+                        <td>44</td>
+                        <td>深藍色</td>
+                      </tr>
+                      <tr> 
+                        <td bgcolor="#990099"><font color="#990099">█</font></td>
+                        <td>35</td>
+                        <td>深紫色</td>
+                        <td bgcolor="#990099"><font color="#990099">█</font></td>
+                        <td>45</td>
+                        <td>深紫色</td>
+                      </tr>
+                      <tr> 
+                        <td bgcolor="#009999"><font color="#009999">█</font></td>
+                        <td>36</td>
+                        <td>藍綠色</td>
+                        <td bgcolor="#009999"><font color="#009999">█</font></td>
+                        <td>46</td>
+                        <td>藍綠色</td>
+                      </tr>
+                      <tr> 
+                        <td bgcolor="#CCCCCC"><font color="#CCCCCC">█</font></td>
+                        <td>37</td>
+                        <td>灰色</td>
+                        <td bgcolor="#CCCCCC"><font color="#CCCCCC">█</font></td>
+                        <td>47</td>
+                        <td>灰色</td>
+                      </tr>
+                      <tr> 
+                        <td bgcolor="#999999"><font color="#999999">█</font></td>
+                        <td>1;30</td>
+                        <td>深灰色</td>
+                        <td colspan="3" rowspan="8">&nbsp;</td>
+                      </tr>
+                      <tr> 
+                        <td bgcolor="#FF0000"><font color="#FF0000">█</font></td>
+                        <td>1;31</td>
+                        <td>紅色</td>
+                      </tr>
+                      <tr> 
+                        <td bgcolor="#00FF00"><font color="#00FF00">█</font></td>
+                        <td>1;32</td>
+                        <td>螢光綠</td>
+                      </tr>
+                      <tr> 
+                        <td bgcolor="#FFFF00"><font color="#FFFF00">█</font></td>
+                        <td>1;33</td>
+                        <td>黃色</td>
+                      </tr>
+                      <tr> 
+                        <td bgcolor="#0000FF"><font color="#0000FF">█</font></td>
+                        <td>1;34</td>
+                        <td>藍色</td>
+                      </tr>
+                      <tr> 
+                        <td bgcolor="#FF00FF"><font color="#FF00FF">█</font></td>
+                        <td>1;35</td>
+                        <td>桃紅色</td>
+                      </tr>
+                      <tr> 
+                        <td bgcolor="#00FFFF"><font color="#00FFFF">█</font></td>
+                        <td>1;36</td>
+                        <td>淺藍色</td>
+                      </tr>
+                      <tr> 
+                        <td bgcolor="#FFFFFF"><font color="#FFFFFF">█</font></td>
+                        <td>1;37</td>
+                        <td>白色</td>
+                      </tr>
+                    </table>
+                    <br>
+                    彩色碼的公式為 <font color="#FF0000">*<font color="#FF9900">[</font><font color="#0000FF">前景色碼</font><font color="#FF9900">;</font><font color="#009900">背景色碼</font><font color="#FF9900">m</font></font> 
+                    <br>
+                    其中<font color="#FF0000">*</font>是一個特殊字元 用來作為一個彩色碼單位的起始 ，在bbs中只要按Ctrl+u就可以打出這個特殊字元，m則是這個彩色碼單位的結束，一般預設的色彩是前景為灰色37背景為黑色40<br>
+                    <div style="background-color: #990000;color: #ffffff;  text-indent: 0pt;" > 
+                      AK47是把好槍</div>
+                    像上面的這個彩色碼便是 <font color="#FF0000">*<font color="#FF9900">[</font><font color="#0000FF">1;37</font><font color="#FF9900">;</font><font color="#009900">41</font><font color="#FF9900">m</font><font color="#000000">AK47<br>
+                    </font></font> 
+                    <div style="background-color: #990000;width: 80px;color: #ffffff;  text-indent: 0pt;" > 
+                      AK47是把好槍</div>
+                    彩色碼有繼承性 所以要用還原碼<font color="#FF0000"><font color="#FF0000">*<font color="#FF9900">[</font><font color="#FF9900">m</font></font></font>來拋棄繼承，像上面這個就是<font color="#FF0000">*<font color="#FF9900">[</font><font color="#0000FF">1;37</font><font color="#FF9900">;</font><font color="#009900">41</font><font color="#FF9900">m</font><font color="#000000">AK47是把好槍</font><font color="#FF0000">*<font color="#FF9900">[m</font></font></font> 
+                    也就是說還原碼之後的色彩為預設色彩<br>
+                    以下是幾個彩色碼繼承性的例子，利用彩色碼繼承的特性可以讓 彩色碼減肥<br>
+                    <table  height="16"  border="0" cellpadding="0" cellspacing="0">
+                      <tr > 
+                        <td  bgcolor="#990000"><font color="#FFFFFF">AK47是把好槍</font></td>
+                        <td  bgcolor="#000099"><font color="#FFFFFF">M4A1也是</font></td>
+                      </tr>
+                    </table>
+                    前景繼承 彩色碼為 <font color="#FF0000">*<font color="#FF9900">[</font><font color="#0000FF">1;37</font><font color="#FF9900">;</font><font color="#009900">41</font><font color="#FF9900">m</font><font color="#000000">AK47</font><font color="#FF0000">*<font color="#FF9900">[</font><font color="#009900">44</font><font color="#FF9900">m</font></font></font><font color="#000000">M4A1也是</font> 
+                    <font color="#FF0000"><font color="#FF0000">*<font color="#FF9900">[m</font></font></font> 
+                    <br>
+                    <table   border="0" cellpadding="0" cellspacing="0">
+                      <tr > 
+                        <td  bgcolor="#990000"><font color="#FFFFFF">AK47是把好槍</font></td>
+                        <td  bgcolor="#990000"><font color="#00FF00">M4A1也是</font></td>
+                      </tr>
+                    </table>
+                    亮度繼承+背景繼承 彩色碼為 <font color="#FF0000">*<font color="#FF9900">[</font><font color="#0000FF">1;37</font><font color="#FF9900">;</font><font color="#009900">41</font><font color="#FF9900">m</font><font color="#000000">AK47</font><font color="#FF0000">*<font color="#FF9900">[</font><font color="#FF0000"><font color="#0000FF">32</font></font><font color="#FF9900">m</font></font></font><font color="#000000">M4A1也是</font> 
+                    <font color="#FF0000"><font color="#FF0000">*<font color="#FF9900">[m</font></font></font> 
+                    在此第一個彩色碼單位的亮度<font color="#FF0000"><font color="#0000FF">1</font></font>以及背景<font color="#FF0000"><font color="#009900">41</font></font>特性都被後面一個彩色碼單元繼承<br>
+                    <table  height="16"  border="0" cellpadding="0" cellspacing="0">
+                      <tr > 
+                        <td  bgcolor="#990000"><font color="#FFFFFF">AK47是把好槍</font></td>
+                        <td  bgcolor="#000099"><font color="#CCCCCC">M4A1也是</font></td>
+                      </tr>
+                    </table>
+                    限定繼承 彩色碼為 <font color="#FF0000">*<font color="#FF9900">[</font><font color="#0000FF">1;37</font><font color="#FF9900">;</font><font color="#009900">41</font><font color="#FF9900">m</font><font color="#000000">AK47</font><font color="#FF0000">*<font color="#FF9900">[</font><font color="#FF0000"><font color="#FF9900">;</font><font color="#009900">44</font></font><font color="#FF9900">m</font></font></font><font color="#000000">M4A1</font><font color="#000000">也是</font><font color="#FF0000"><font color="#FF0000">*<font color="#FF9900">[m</font></font></font> 
+                    不知道你有沒有注意到在後面的彩色碼單元中多了一個分號(;)這個分號讓他拋棄的前景色與亮色的繼承，使得前景還原成預設的灰色，然後再加上一個44讓背景變成了藍色，然後要特別注意的是.....限定繼承這個專有名詞是我亂用的，別講出去丟人現眼阿~<br>
+                    <br>
+                  </div>
+                <td> </tr>
+              <tr> 
+                <td class="ContentTD"> 5.6.BBS動畫原理 <a name="bbsmovieori"></a> 
+                  <div class="sectionContent" > 如果你沒看過BBS動畫的那肯定是新警察，有興趣可以到PTT的BBSmovie版參觀一下，bbs動畫利用的是按PageDown鍵翻頁造成動畫的效果，但是由於bbs按PageDown的時候會保留上一頁的最後一行，所以會出現一個動畫的重覆行，讓動畫製作複雜了點，BBS的一個畫面中有24行結構如下<br>
+                    <table width="75%" border="1" cellspacing="0" cellpadding="0" class="sectionContent">
+                      <tr> 
+                        <td width="22%"><font color="#000000">第零頁</font><font color="#009900">,第一頁</font></td>
+                        <td width="78%"><font color="#000000">第24行</font><font color="#009900">,第1行</font></td>
+                      </tr>
+                      <tr> 
+                        <td>&nbsp;</td>
+                        <td><font color="#009900">第2行</font></td>
+                      </tr>
+                      <tr> 
+                        <td>&nbsp;</td>
+                        <td><font color="#009900">第3行</font></td>
+                      </tr>
+                      <tr> 
+                        <td>&nbsp;</td>
+                        <td><font color="#009900">第4行</font></td>
+                      </tr>
+                      <tr> 
+                        <td>&nbsp;</td>
+                        <td><font color="#009900">......</font></td>
+                      </tr>
+                      <tr> 
+                        <td>&nbsp;</td>
+                        <td><font color="#009900">第23行</font></td>
+                      </tr>
+                      <tr> 
+                        <td><font color="#009900">第一頁</font>,<font color="#0066FF">第二頁</font></td>
+                        <td><font color="#009900">第24行</font>,<font color="#0066FF">第1行</font></td>
+                      </tr>
+                      <tr> 
+                        <td>&nbsp;</td>
+                        <td><font color="#0066FF">第2行</font></td>
+                      </tr>
+                      <tr> 
+                        <td>&nbsp;</td>
+                        <td><font color="#0066FF">第3行</font></td>
+                      </tr>
+                      <tr> 
+                        <td>&nbsp;</td>
+                        <td><font color="#0066FF">第4行</font></td>
+                      </tr>
+                      <tr> 
+                        <td>&nbsp;</td>
+                        <td><font color="#0066FF">......</font></td>
+                      </tr>
+                      <tr> 
+                        <td>&nbsp;</td>
+                        <td><font color="#0066FF">第23行</font></td>
+                      </tr>
+                      <tr> 
+                        <td><font color="#0066FF">第二頁</font>,<font color="#FF3300">第三頁</font></td>
+                        <td><font color="#0066FF">第24行,<font color="#FF3300">第1行</font></font></td>
+                      </tr>
+                      <tr> 
+                        <td>&nbsp;</td>
+                        <td><font color="#0066FF"><font color="#FF3300">第2行</font></font></td>
+                      </tr>
+                      <tr> 
+                        <td>&nbsp;</td>
+                        <td><font color="#0066FF"><font color="#FF3300">第3行</font></font></td>
+                      </tr>
+                      <tr> 
+                        <td>&nbsp;</td>
+                        <td><font color="#0066FF"><font color="#FF3300">第.....</font></font></td>
+                      </tr>
+                    </table>
+                    <br>
+                  </div>
+                <td> </tr>
+              <tr> 
+                <td height="47" class="ContentTD"> 5.7.一格四色原理 <a name="fourcolorori"></a><br> 
+                  <div class="sectionContent" > 如果要說到一格四色的原理，那有個必須先提的就是<font color="#FF9933">雙色字</font>，雙色字是利用拆開雙位元字來達成，一般的英文字母是單位元字，而所有的中文字還有一些特殊符號都是雙位元字，在BBS中雙位元字所佔的空間是單位元字的兩倍，雙色字的原理就是在組成雙位元字的兩個位元之間插入彩色碼，讓一個字的左半邊跟右半邊可以有不同的前景色或背景色，Visual 
+                    Ansi並不支援雙色字，但是像是PCMan的編輯器就可以做出雙色字，只要將偵測雙位元字的功能取消即可分別處理一個雙位元自中的兩個位元，而VA用了一些特殊的技巧使得可以產生一格四色，故誕生了方塊圖編輯器。<br>
+                    <table width="20" height="20" border="0" cellspacing="0" cellpadding="0">
+                      <tr > 
+                        <td width="10"  height="10" bgcolor="#999900"></td>
+                        <td width="10" height="10" bgcolor="#CCCCCC"></td>
+                      </tr>
+                      <tr> 
+                        <td width="10" height="10" bgcolor="#990000"></td>
+                        <td width="10" height="10" bgcolor="#000099"></td>
+                      </tr>
+                    </table>
+                    像是上面的這個一格四色就是應用雙色字的原理做出來的，如果去掉他的彩色碼的話就會變成"▄"這樣一個佔住了下半邊的字元，在此就不囉唆列出幾個實際例子瞧瞧吧<br>
+                    <table width="20" height="20" border="0" cellspacing="0" cellpadding="0">
+                      <tr > 
+                        <td width="20"  height="10" bgcolor="#999900"></td>
+                      </tr>
+                      <tr> 
+                        <td width="20" height="10" bgcolor="#990000"></td>
+                      </tr>
+                    </table>
+                    上面這個是普通沒用雙色效果的*[31;43m▄*[m ，前景是下面的那半塊為前景棕色(31)，上半部則是背景的土黃色(43) 
+                    <table width="20" height="20" border="0" cellspacing="0" cellpadding="0">
+                      <tr > 
+                        <td width="10"  height="10" bgcolor="#999900"></td>
+                        <td width="10" height="10" bgcolor="#999900"></td>
+                      </tr>
+                      <tr> 
+                        <td width="10" height="10" bgcolor="#990000"></td>
+                        <td width="10" height="10" bgcolor="#000099"></td>
+                      </tr>
+                    </table>
+                    這個則是在只有改變前景的情況下 *[31;43m<font color="#33CCFF">(▄的左邊位元)</font>*[34m<font color="#33CCFF">(▄的右邊位元)</font>*[m， 
+                    在此 <font color="#33CCFF">(▄的左邊位元)</font>與<font color="#33CCFF">(▄的右邊位元)</font>因為無法用顯示出來所以用這樣描述的來代替，這個例子中▄被切一半，中間則插了一個彩色碼讓右半邊前景變成了深藍色(34) 
+                    <table width="20" height="20" border="0" cellspacing="0" cellpadding="0">
+                      <tr > 
+                        <td width="10"  height="10" bgcolor="#999900"></td>
+                        <td width="10" height="10" bgcolor="#CCCCCC"></td>
+                      </tr>
+                      <tr> 
+                        <td width="10" height="10" bgcolor="#990000"></td>
+                        <td width="10" height="10" bgcolor="#000099"></td>
+                      </tr>
+                    </table>
+                    最後一個就是一格四色的完全體 *[31;43m<font color="#33CCFF">(▄的左邊位元)</font>*[34;47m<font color="#33CCFF">(▄的右邊位元)</font>*[m 
+                    右半邊的前景變成深藍色(34)而背景變成灰色(47)<br>
+                    <br>
+                    這樣應該了解了一格四色是怎麼回事了吧，所以說如果要用一般的編輯器製作一格四色的圖那將會是非常的困難，Visaul Ansi才特地製作了方塊圖編輯器來讓這一切變的簡單，<span class="delline">順帶一提的事就是因為技術上無法將一個雙位元字拆開，所以方塊圖編輯器是用了一個取巧的方法來完成的，就是在▄後加一個向前退一個位元的字元然後再將上一個&quot;e&quot;，沒錯，這個e就是abcde的e，因為▄的右邊位元剛好跟e一樣 
+                    ，這就是為什麼無法在一般編輯器使用雙位元，卻可以在方塊圖編輯器製造一格四色了</span> (於0.9.8版之後雙色字技術已克服)。</div>
+                <td> </tr>
+              <tr> 
+                <td class="ContentTD"> 5.8. What's New in 0.9.8
+                  <a name="new098" id="new098"></a>                  <div class="sectionContent" >
+				  以下為0.9.8版的變更列表：
+				  <ul>
+				    <li>[一般編輯器]新增<span class="style4">輸入模式</span>功能</li>
+				    <li>[一般編輯器]新增<span class="style4">背景圖片工具</span></li>
+				    <li>[一般編輯器]新增對<span class="style4">雙色字的支援</span></li>
+				    <li>[一般編輯器]新增特殊效果工具的<span class="style4">移動選取區塊</span>功能</li>
+				    <li>[一般編輯器]將連續與抹寫畫筆整合到統一的畫筆介面：<span class="style4">連續</span>、<span class="style4">取代</span></li>
+				    <li>[一般編輯器]新增換色工具的前景色<span class="style4">同背景</span>功能</li>
+				    <li>[一般編輯器]新增複製&amp;貼上的<span class="style4">從剪貼簿擷取</span>功能</li>
+				    <li>[一般編輯器]新增編譯後<span class="style4">複製到剪貼簿</span>的功能</li>
+				    <li>[一般編輯器]編譯時彩色碼減肥改為內建預設</li>
+				    <li>[一般編輯器]移除編譯的<span class="style4">輸出到文字方塊</span>(配合雙色字)</li>
+				    <li>[一般編輯器]新增播放動畫可設定速度的功能(配合時間軸)</li>
+				    <li>[一般編輯器]新增畫布控板可<span class="style4">設定時間軸</span>功能</li>
+				    <li>[一般編輯器]新增動畫導播可<span class="style4">設定時間軸</span>功能</li>
+				    <li>[一般編輯器]可編譯成<span class="style4">pmore模式</span>的動畫(配合時間軸)</li>
+				    <li>[一般編輯器]變更開新檔案時可以設定動畫頁畫布大小(for pmore)</li>
+				    <li>[一般編輯器]改善繪圖速度使播放動畫時不閃爍</li>
+				    <li>[方塊圖編輯器]新增編譯後<span class="style4">複製到剪貼簿</span>的功能</li>
+				    <li>[方塊圖編輯器]移除編譯的<span class="style4">輸出到文字方塊</span></li>
+				    <li>[方塊圖編輯器]修復<span class="style4">換色</span>功能</li>
+				  </ul>
+				  <br>
+                  </div>
+                <td> </tr>
+              <tr> 
+                <td class="ContentTD"> <div class="sectionContent" > </div>
+                <td> </tr>
+            </table></td>
+        </tr>
+      </table>
+      <table width="95%" border="0" cellspacing="0" cellpadding="0">
+        <tr> 
+          <td colspan="2" class="contentTitleTD">6.關於</td>
+        </tr>
+        <tr> 
+          <td width="5%">&nbsp;</td>
+          <td width="95%" class="contentTD"> Visual Ansi <a name="aboutva"></a> 
+            <div class="sectionContent" > 自2003年夏開始製作，一開始並沒有規劃，只是想做一個可以用滑鼠畫BBS圖的簡單程式而已，後來便想到什麼做什麼而成了現在這樣，而之所以會有動畫模式的產生是因為平常有在看PTT的BBSmovie版，所以才會設動畫的輔助功能，好啦其實是因為我也有想過要畫動畫，結果發現太難了，說來慚愧的是VA有動畫輔助的功能以後，我自己畫過的動畫也只有VA的宣傳而已&gt;&lt; 
+              ，軟體是應需求而生的(還有應我自己爽啦^^)所以如果<font color="#FF9933">使用者有任何的建議或是點子，歡迎來信</font> 
+              <a href="mailto:mouse26@ptt.cc">mouse26@ptt.cc</a> ，還有因為本身不是資訊專科所以也是邊做邊玩邊學，可能有些建議我無法立即完成，這點請見諒&lt;(_ 
+              _)&gt;<br>
+            </div>
+            Nerv.Studio<a name="aboutns"></a><br> <img src="pic/nerv_rs.gif" align="left"  > <div class="sectionContent" > 
+              Nerv.Studio成立於西元2002年夏，組織章程為Nerv.Studio下附屬 .Programming與 .Style 這兩個部門，.Programming不用說主要的功能便是設計軟體網頁等，.Style則是負責美工及藝術方面的東西，.Style是在2003才正式分出來的，可惜Nerv.Studio發展至今成員仍只有一個人，設有網站其網址為 
+              <a href="http://98.to/%A7s">http://98.to/吱</a> 或 <a href="http://med.tmu.edu.tw/%7Emouse26">http://med.tmu.edu.tw/~mouse26</a> 
+              網站內有陳列一些Nerv.Studio的作品，但是要特別提醒的是如果沒有特別需要其實不需要下載VA以外的東西，因為可能到頭來也祇是佔空間而已....，<font color="#FF9933">Nerv.Studio為非營利組織，其作品可任意拷貝複製</font>，但請盡量留下Nerv.Studio之記號，而且<font color="#FF9933">不可作為商業用途</font>，by 
+              吱 2005</div>
+            </td>
+        </tr>
+    </table></td>
+  </tr>
+  <tr> 
+    <td height="159" colspan="2"> <table width="75%" border="0" align="center"   class="tb2"  >
+        <tr> 
+          <td > <div class="intbcontent"> 
+              <div align="center">Copyright &copy; 2003-2005<br>
+              Nerv. Studio All Right Reserved.</div>
+            </div></td>
+        </tr>
+      </table></td>
+  </tr>
+</table>
+
+<map name="Map">
+  <area shape="circle" coords="120,322,9" href="#uipapercl">
+  <area shape="circle" coords="98,108,9" href="#uipaper">
+  <area shape="circle" coords="252,22,9" href="#uimenue">
+  <area shape="circle" coords="480,54,9" href="#uitoolp">
+  <area shape="circle" coords="11,58,9" href="#uicolorboard">
+  <area shape="circle" coords="271,54,9" href="#uitoolbar">
+</map>
+</body>
+</html>
